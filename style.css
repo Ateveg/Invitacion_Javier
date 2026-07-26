@@ -1,0 +1,170 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#000;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+}
+
+
+/* ==========================================
+   IMÁGENES
+========================================== */
+
+img{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100vw;
+    height:100vh;
+
+    object-fit:contain;
+
+    user-select:none;
+    -webkit-user-drag:none;
+
+}
+
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+#portada{
+
+    opacity:1;
+
+    transition:opacity 1s ease;
+
+    z-index:2;
+
+}
+
+
+/* ==========================================
+   CARTA
+========================================== */
+
+#carta{
+
+    opacity:0;
+
+    transition:opacity 1.4s ease;
+
+    z-index:1;
+
+}
+
+
+/* ==========================================
+   ACCIONES
+========================================== */
+
+#acciones{
+
+    position:fixed;
+
+    left:49%;
+    bottom:4vh;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+    z-index:3;
+
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+#acciones button{
+
+    border:none;
+
+    background:rgba(0,0,0,.45);
+
+    color:#d8b06a;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(4px);
+
+}
+
+
+#acciones button:hover{
+
+    background:rgba(0,0,0,.65);
+
+}
+
+
+#acciones button:active{
+
+    transform:scale(.97);
+
+}
+
+
+/* ==========================================
+   ESTADOS
+========================================== */
+
+body.abierta #portada{
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+body.abierta #carta{
+
+    opacity:1;
+
+}
+
+
+body.mostrarAcciones #acciones{
+
+    opacity:1;
+
+}
