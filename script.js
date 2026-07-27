@@ -42,7 +42,7 @@ function abrirInvitacion(){
 
 portada.addEventListener("click",abrirInvitacion);
 
-portada.addEventListener(
+/*portada.addEventListener(
 
     "touchstart",
 
@@ -50,7 +50,7 @@ portada.addEventListener(
 
     {once:true}
 
-);
+);*/
 
 
 // Ubicación
