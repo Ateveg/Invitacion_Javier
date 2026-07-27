@@ -4,7 +4,8 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Invitación Javier</title>
 
@@ -14,9 +15,25 @@
 
 <body>
 
-    <img id="portada" src="img/portada.png" alt="Portada">
+    <img id="portada"
+         src="img/portada.png"
+         alt="Portada">
 
-    <img id="carta" src="img/carta.png" alt="Carta">
+    <picture id="contenedorCarta">
+
+        <!-- Celulares -->
+
+        <source
+            media="(max-width:768px)"
+            srcset="img/carta_movil.png">
+
+        <!-- PC -->
+
+        <img id="carta"
+             src="img/carta_pc.png"
+             alt="Carta">
+
+    </picture>
 
     <audio
         id="ambiente"
@@ -27,16 +44,10 @@
 
     <div id="acciones">
 
-        <button id="btnAlberca">
-            ¡No olvides tu traje de baño!
-        </button>
-
-        <button id="btnSobre">
-            ✉
-        </button>
-
         <button id="btnUbicacion">
+
             📍 Ver ubicación
+
         </button>
 
     </div>

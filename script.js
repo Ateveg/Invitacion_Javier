@@ -7,20 +7,17 @@ const btnUbicacion = document.getElementById("btnUbicacion");
 const audio = document.getElementById("ambiente");
 
 
-// ================================
-// Coordenadas del evento
-// ================================
+// Coordenadas
 
 const lat = 25.449455;
+
 const lon = -100.879906;
 
 
 let abierta = false;
 
 
-// ================================
 // Abrir invitación
-// ================================
 
 function abrirInvitacion(){
 
@@ -28,41 +25,41 @@ function abrirInvitacion(){
 
     abierta = true;
 
-    audio.volume = 0.10;
+    audio.volume = 0.20;
 
-    audio.play().catch(() => {});
+    audio.play().catch(()=>{});
 
     body.classList.add("abierta");
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
         body.classList.add("mostrarAcciones");
 
-    }, 2400);
+    },2400);
 
 }
 
 
-portada.addEventListener("click", abrirInvitacion);
+portada.addEventListener("click",abrirInvitacion);
 
 portada.addEventListener(
+
     "touchstart",
+
     abrirInvitacion,
-    { once:true }
+
+    {once:true}
+
 );
 
 
-// ================================
-// Abrir ubicación
-// ================================
+// Ubicación
 
-btnUbicacion.addEventListener("click", () => {
+btnUbicacion.addEventListener("click",()=>{
 
     const ua = navigator.userAgent;
 
-    // iPhone / iPad
-
-    if (/iPhone|iPad|iPod/i.test(ua)) {
+    if(/iPhone|iPad|iPod/i.test(ua)){
 
         window.open(
 
@@ -76,17 +73,13 @@ btnUbicacion.addEventListener("click", () => {
 
     }
 
-    // Android
-
-    if (/Android/i.test(ua)) {
+    if(/Android/i.test(ua)){
 
         window.location.href = `geo:${lat},${lon}`;
 
         return;
 
     }
-
-    // Windows / Mac / Linux
 
     window.open(
 
