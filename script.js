@@ -57,6 +57,9 @@ portada.addEventListener("click",abrirInvitacion);
 
 btnUbicacion.addEventListener("click",()=>{
 
+    audio.pause();
+    audio.currentTime = 0;
+
     const ua = navigator.userAgent;
 
     if(/iPhone|iPad|iPod/i.test(ua)){
@@ -66,21 +69,13 @@ btnUbicacion.addEventListener("click",()=>{
             "_blank"
         );
 
-    }else{
+        return;
 
-        window.open(
-        `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
-        "_blank"
-        );
-
-    }   
+    }
 
     window.open(
-
         `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
-
         "_blank"
-
     );
 
 });
