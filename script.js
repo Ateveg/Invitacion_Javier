@@ -55,27 +55,31 @@ portada.addEventListener("click",abrirInvitacion);
 
 // Ubicación
 
-btnUbicacion.addEventListener("click",()=>{
+btnUbicacion.addEventListener("click", () => {
 
     audio.pause();
     audio.currentTime = 0;
 
     const ua = navigator.userAgent;
 
-    if(/iPhone|iPad|iPod/i.test(ua)){
+    setTimeout(() => {
+
+        if(/iPhone|iPad|iPod/i.test(ua)){
+
+            window.open(
+                `https://maps.apple.com/?ll=${lat},${lon}`,
+                "_blank"
+            );
+
+            return;
+
+        }
 
         window.open(
-            `https://maps.apple.com/?ll=${lat},${lon}`,
+            `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
             "_blank"
         );
 
-        return;
-
-    }
-
-    window.open(
-        `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
-        "_blank"
-    );
+    }, 100);
 
 });
