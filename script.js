@@ -62,24 +62,18 @@ btnUbicacion.addEventListener("click",()=>{
     if(/iPhone|iPad|iPod/i.test(ua)){
 
         window.open(
-
             `https://maps.apple.com/?ll=${lat},${lon}`,
-
             "_blank"
-
         );
 
-        return;
+    }else{
 
-    }
+        window.open(
+        `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
+        "_blank"
+        );
 
-    if(/Android/i.test(ua)){
-
-        window.location.href = `geo:${lat},${lon}`;
-
-        return;
-
-    }
+    }   
 
     window.open(
 
