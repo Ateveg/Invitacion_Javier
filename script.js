@@ -67,7 +67,7 @@ btnUbicacion.addEventListener("click", () => {
         if(/iPhone|iPad|iPod/i.test(ua)){
 
             window.open(
-                `https://maps.apple.com/?ll=${lat},${lon}`,
+                `https://maps.apple.com/?q=${lat},${lon}`,
                 "_blank"
             );
 
