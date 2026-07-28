@@ -40,46 +40,21 @@ function abrirInvitacion(){
 }
 
 
-portada.addEventListener("click",abrirInvitacion);
-
-/*portada.addEventListener(
-
-    "touchstart",
-
-    abrirInvitacion,
-
-    {once:true}
-
-);*/
+portada.addEventListener("click", abrirInvitacion);
 
 
 // Ubicación
 
 btnUbicacion.addEventListener("click", () => {
 
+    // Detener el ambiente
     audio.pause();
     audio.currentTime = 0;
 
-    const ua = navigator.userAgent;
-
-    setTimeout(() => {
-
-        if(/iPhone|iPad|iPod/i.test(ua)){
-
-            window.open(
-                `https://maps.apple.com/?q=${lat},${lon}`,
-                "_blank"
-            );
-
-            return;
-
-        }
-
-        window.open(
-            `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
-            "_blank"
-        );
-
-    }, 100);
+    // Abrir Google Maps con la ubicación
+    window.open(
+        `https://www.google.com/maps/search/?api=1&query=${lat},${lon}`,
+        "_blank"
+    );
 
 });
